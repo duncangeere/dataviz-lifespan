@@ -1,36 +1,17 @@
 <!DOCTYPE html>
 
 <head>
-  <script src="https://d3js.org/d3.v4.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/dimple/2.3.0/dimple.latest.min.js"></script>
-    
-</head>
-<body>
-    
-<div id="chartContainer">
-    
-  <script type="text/javascript">
-    var svg = dimple.newSvg("#chartContainer", 800, 600);
-    d3.csv("lifespan_m.csv", function (data) {
-      var myChart = new dimple.chart(svg, data);
-      var x = myChart.addMeasureAxis("x", "Lifespan");
-      x.overrideMin = 69;
-      myChart.setBounds(100, 30, 650, 550);
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dimple/2.3.0/dimple.latest.min.js"></script>
 
-      var y = myChart.addCategoryAxis("y", "Country");
+</head>
+
+<body>
+
+    <div id="chartContainer">
+
+        <script src="dimple_chart.js"></script>
         
-      var m2010 = myChart.addSeries("Group", dimple.plot.bar);
-      m2010.stacked = false;
-       /*  
-      var m2030 = myChart.addSeries("Men 2030", dimple.plot.bar);
-      var w2010 = myChart.addSeries("Women 2010", dimple.plot.bar);
-      var w2030 = myChart.addSeries("Women 2030", dimple.plot.bar);
-      */
-      myChart.addLegend(60, 10, 510, 20, "right");
-      myChart.draw();
-    });
-  </script>
-</div>
+    </div>
 
 </body>
-
